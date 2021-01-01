@@ -1,0 +1,795 @@
+
+
+CHEF AND DIVISION 3
+
+Chef wants to host some Division-3 contests. Chef has N setters who are busy creating new problems for him. The ith setter has made Ai problems where 1≤i≤N.
+
+A Division-3 contest should have exactly K problems. Chef wants to plan for the next D days using the problems that they have currently. But Chef cannot host more than one Division-3 contest in a day.
+
+Given these constraints, can you help Chef find the maximum number of Division-3 contests that can be hosted in these D days?
+
+Input:
+The first line of input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+The first line of each test case contains three space-separated integers - N, K and D respectively.
+The second line of each test case contains N space-separated integers A1,A2,…,AN respectively.
+
+Output:
+For each test case, print a single line containing one integer ― the maximum number of Division-3 contests Chef can host in these D days
+
+Constraints
+1≤T≤103
+1≤N≤102
+1≤K≤109
+1≤D≤109
+1≤Ai≤107 for each valid i
+
+Subtasks
+Subtask #1 (40 points):
+
+N=1
+1≤A1≤105
+Subtask #2 (60 points): Original constraints
+
+Sample Input:
+5
+1 5 31
+4
+1 10 3
+23
+2 5 7
+20 36
+2 5 10
+19 2
+3 3 300
+1 1 1
+Sample Output:
+0
+2
+7
+4
+1
+Explanation:
+Example case 1: Chef only has A1=4 problems and he needs K=5 problems for a Division-3 contest. So Chef won't be able to host any Division-3 contest in these 31 days. Hence the first output is 0.
+
+Example case 2: Chef has A1=23 problems and he needs K=10 problems for a Division-3 contest. Chef can choose any 10+10=20 problems and host 2 Division-3 contests in these 3 days. Hence the second output is 2.
+
+Example case 3: Chef has A1=20 problems from setter-1 and A2=36 problems from setter-2, and so has a total of 56 problems. Chef needs K=5 problems for each Division-3 contest. Hence Chef can prepare 11 Division-3 contests. But since we are planning only for the next D=7 days and Chef cannot host more than 1 contest in a day, Chef cannot host more than 7 contests. Hence the third output is 7.
+
+Author:	smit_adm
+Date Added:	30-12-2020
+Time Limit:	1 secs
+Source Limit:	50000 Bytes
+Languages:	CPP14, C, JAVA, PYTH 3.6, PYTH, CS2, ADA, PYPY, PYP3, TEXT, CPP17, PAS fpc, RUBY, PHP, NODEJS, GO, TCL, HASK, PERL, SCALA, kotlin, BASH, JS, PAS gpc, BF, LISP sbcl, CLOJ, LUA, D, R, CAML, rust, ASM, FORT, FS, LISP clisp, SQL, swift, SCM guile, PERL6, CLPS, WSPC, ERL, ICK, NICE, PRLG, ICON, PIKE, COB, SCM chicken, SCM qobi, ST, NEM, SQLQ
+Submit
+Submission Ends In
+9
+Days
+20
+Hrs
+4
+Min
+3
+Sec
+My SubmissionsAll Submissions
+Successful Submissions
+
+
+
+.........................................................................
+
+
+
+
+
+
+ENCODED STRING
+
+An encoder encodes the first 16 lowercase English letters using 4 bits each. The first bit (from the left) of the code is 0 if the letter lies among the first 8 letters, else it is 1, signifying that it lies among the last 8 letters. The second bit of the code is 0 if the letter lies among the first 4 letters of those 8 letters found in the previous step, else it's 1, signifying that it lies among the last 4 letters of those 8 letters. Similarly, the third and the fourth bit each signify the half in which the letter lies.
+
+For example, the letter j would be encoded as :
+
+Among (a,b,c,d,e,f,g,h | i,j,k,l,m,n,o,p), j appears in the second half. So the first bit of its encoding is 1.
+Now, among (i,j,k,l | m,n,o,p), j appears in the first half. So the second bit of its encoding is 0.
+Now, among (i,j | k,l), j appears in the first half. So the third bit of its encoding is 0.
+Now, among (i | j), j appears in the second half. So the fourth and last bit of its encoding is 1.
+So j's encoding is 1001,
+
+Given a binary encoded string S, of length at most 105, decode the string. That is, the first 4 bits are the encoding of the first letter of the secret message, the next 4 bits encode the second letter, and so on. It is guaranteed that the string's length is a multiple of 4.
+
+Input:
+The first line of the input contains an integer T, denoting the number of test cases.
+The first line of each test case contains an integer N, the length of the encoded string.
+The second line of each test case contains the encoded string S.
+Output:
+For each test case, print the decoded string, in a separate line.
+
+Constraints
+1≤T≤10
+4≤N≤105
+The length of the encoded string is a multiple of 4.
+0≤Si≤1
+Subtasks
+100 points : Original constraints.
+Sample Input:
+3
+4
+0000
+8
+00001111
+4
+1001
+Sample Output:
+a
+ap
+j
+Explanation:
+Sample Case 1 :
+The first bit is 0, so the letter lies among the first 8 letters, i.e., among a,b,c,d,e,f,g,h. The second bit is 0, so it lies among the first four of these, i.e., among a,b,c,d.
+
+The third bit is 0, so it again lies in the first half, i.e., it's either a or b. Finally, the fourth bit is also 0, so we know that the letter is a.
+
+Sample Case 2 :
+Each four bits correspond to a character. Just like in sample case 1, 0000 is equivalent to a. Similarly, 1111 is equivalent to p. So, the decoded string is ap.
+
+Sample Case 3 :
+The first bit is 1, so the letter lies among the last 8 letters, i.e., among i,j,k,l,m,n,o,p. The second bit is 0, so it lies among the first four of these, i.e., among i,j,k,l.
+
+The third bit is 0, so it again lies in the first half, i.e., it's either i or j. Finally, the fourth bit is 1, so we know that the letter is j.
+
+Author:	daanish_adm
+Date Added:	31-12-2020
+Time Limit:	1 secs
+Source Limit:	50000 Bytes
+Languages:	CPP14, C, JAVA, PYTH 3.6, PYTH, CS2, ADA, PYPY, PYP3, TEXT, CPP17, PAS fpc, RUBY, PHP, NODEJS, GO, TCL, HASK, PERL, SCALA, kotlin, BASH, JS, PAS gpc, BF, LISP sbcl, CLOJ, LUA, D, R, CAML, rust, ASM, FORT, FS, LISP clisp, SQL, swift, SCM guile, PERL6, CLPS, WSPC, ERL, ICK, NICE, PRLG, ICON, PIKE, COB, SCM chicken, SCM qobi, ST, NEM, SQLQ
+
+
+
+
+..................................................................................................................
+
+
+
+
+
+
+FAIR ELECTIONS
+
+
+
+
+	Elections are coming soon. This year, two candidates passed to the final stage. One candidate is John Jackson and his opponent is Jack Johnson.
+
+During the elections, everyone can vote for their favourite candidate, but no one can vote for both candidates. Then, packs of votes which went to the same candidate are formed. You know that for John Jackson, there are N packs containing A1,A2,…,AN votes, and for Jack Johnson, there are M packs containing B1,B2,…,BM votes.
+
+The winner is the candidate that has strictly more votes than the other candidate; if both have the same number of votes, there is no winner. You are a friend of John Jackson and you want to help him win. To do that, you may perform the following operation any number of times (including zero): choose two packs of votes that currently belong to different candidates and swap them, i.e. change the votes in each of these packs so that they would go to the other candidate.
+
+You are very careful, so you want to perform as few swaps as possible. Find the smallest number of operations you need to perform or determine that it is impossible to make John Jackson win.
+
+Input
+The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+The first line of each test case contains two space-separated integers N and M.
+The second line contains N space-separated integers A1,A2,…,AN.
+The third line contains M space-separated integers B1,B2,…,BM.
+Output
+For each test case, print a single line containing one integer ― the smallest number of swaps needed to make John Jackson win, or −1 if it is impossible.
+
+Constraints
+1≤T≤103
+1≤N,M≤103
+1≤Ai≤106 for each valid i
+1≤Bi≤106 for each valid i
+the sum of N over all test cases does not exceed 104
+the sum of M over all test cases does not exceed 104
+Subtasks
+Subtask #1 (20 points):
+
+A1=A2=…=AN
+B1=B2=…=BM
+Subtask #2 (80 points): original constraints
+
+Example Input
+2
+2 3
+2 2
+5 5 5
+4 3
+1 3 2 4
+6 7 8
+Example Output
+2
+1
+Explanation
+Example case 1: We can perform two swaps ― each time, we swap a pack of 2 votes from A and a pack of 5 votes from B. After that, John Jackson gets 5+5=10 votes and Jack Johnson gets 2+2+5=9 votes.
+
+Example case 2: We can swap the pack of 1 vote from A and the pack of 8 votes from B. After that, John Jackson gets 8+3+2+4=17 votes and Jack Johnson gets 6+7+1=14 votes.
+
+Author:	6★vegann
+Date Added:	21-12-2020
+Time Limit:	1 secs
+Source Limit:	50000 Bytes
+Languages:	CPP14, C, JAVA, PYTH 3.6, PYTH, CS2, ADA, PYPY, PYP3, TEXT, CPP17, PAS fpc, RUBY, PHP, NODEJS, GO, TCL, HASK, PERL, SCALA, kotlin, BASH, JS, PAS gpc, BF, LISP sbcl, CLOJ, LUA, D, R, CAML, rust, ASM, FORT, FS, LISP clisp, SQL, swift, SCM guile, PERL6, CLPS, WSPC, ERL, ICK, NICE, PRLG, ICON, PIKE, COB, SCM chicken, SCM qobi, ST, NEM, SQLQ
+
+
+
+
+..............................................................................................................
+
+
+
+
+
+
+POINT OF IMPACT
+
+
+
+
+
+
+You are playing a Billiards-like game on an N×N table, which has its four corners at the points {(0,0),(0,N),(N,0), and (N,N)}. You start from a coordinate (x,y), (0<x<N,0<y<N) and shoot the ball at an angle 45∘ with the horizontal. On hitting the sides, the ball continues to move with the same velocity and ensuring that the angle of incidence is equal to the angle of reflection with the normal, i.e, it is reflected with zero frictional loss. On hitting either of the four corners, the ball stops there and doesn’t move any further.
+
+Find the coordinates of the point of collision, when the ball hits the sides for the Kth time. If the ball stops before hitting the sides K times, find the coordinates of the corner point where the ball stopped instead.
+
+Input:
+The first line of the input contains an integer T, the number of testcases.
+Each testcase contains a single line of input, which has four space separated integers - N, K, x, y, denoting the size of the board, the number of collisions to report the answer for, and the starting coordinates.
+Output:
+For each testcase, print the coordinates of the ball when it hits the sides for the Kth time, or the coordinates of the corner point if it stopped earlier.
+
+Constraints
+1≤T≤105
+2≤N≤109
+1≤K≤109
+Subtasks
+30 points : Sum of K over all test cases ≤107
+70 points : Original constraints.
+Sample Input:
+2
+5 5 4 4
+5 2 3 1
+Sample Output:
+5 5
+3 5
+Explanation:
+Sample Case 1 :
+We are given a 5 by 5 board. We shoot the ball from coordinates (4,4), and we need to find its coordinates after it has collided with sides 5 times. However, after shooting, the ball goes directly to the corner (5,5), and stops there. So we report the coordinates (5,5).
+
+fig1
+
+Sample Case 2 :
+We are given a 5 by 5 board. We shoot the ball from the coordinates (3,1), and we need to find its coordinates after it has collided with the sides twice. After shooting, it first hits the right side at (5,3), and then the top side at (3,5). So, we report (3,5).
+
+fig1
+
+Author:	daanish_adm
+Date Added:	31-12-2020
+Time Limit:	1 secs
+Source Limit:	50000 Bytes
+Languages:	CPP14, C, JAVA, PYTH 3.6, PYTH, CS2, ADA, PYPY, PYP3, TEXT, CPP17, PAS fpc, RUBY, PHP, NODEJS, GO, TCL, HASK, PERL, SCALA, kotlin, BASH, JS, PAS gpc, BF, LISP sbcl, CLOJ, LUA, D, R, CAML, rust, ASM, FORT, FS, LISP clisp, SQL, swift, SCM guile, PERL6, CLPS, WSPC, ERL, ICK, NICE, PRLG, ICON, PIKE, COB, SCM chicken, SCM qobi, ST, NEM, SQLQ
+
+
+
+
+
+.....................................................................................................................................
+
+
+
+
+
+
+
+
+	WATCHING CPL (CODESHEF PREMEIR LEAGUE)
+
+
+
+Get excited, folks, because it is time for the final match of Codechef Premier League (CPL)!
+
+Mike and Tracy also want to watch the grand finale, but unfortunately, they could not get tickets to the match. However, Mike is not someone who gives up so easily — he has a plan to watch the match.
+
+The field where the match is played is surrounded by a wall with height K. Outside, there are N boxes (numbered 1 through N). For each valid i, the i-th box has a height Hi.
+
+Mike wants to take some boxes and stack them on top of each other to build two towers. The height of each tower is the sum of heights of all the boxes that form it. Of course, no box may be in both towers. The height of each tower should be at least K. Then Mike can climb on top of one tower and Tracy on top of the other, and they can watch the match uninterrupted!
+
+While Mike is busy stacking the boxes, Tracy would like to know the smallest number of boxes required to build two towers such that each of them has height at least K, or at least that it is impossible to build such towers. Can you help Tracy?
+
+Input
+The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+The first line of each test case contains two space-separated integers N and K.
+The second line contains N space-separated integers H1,H2,…,HN.
+Output
+For each test case, print a single line containing one integer — the smallest number of boxes required to build two towers, or −1 if it is impossible.
+
+Constraints
+1≤T≤5
+1≤N,K≤4,000
+1≤Hi≤105 for each valid i
+Subtasks
+Subtask #1 (30 points):
+
+1≤N,K≤100
+1≤Hi≤100 for each valid i
+Subtask #2 (70 points): original constraints
+
+Example Input
+2
+8 38
+7 8 19 7 8 7 10 20
+4 5
+2 10 4 9
+Example Output
+7
+2
+Explanation
+Example case 1: The first tower can be built with boxes 8+10+20=38 and the second tower with boxes 7+7+8+19=41. In this case, the box with height 7 is left unused.
+
+Example case 2: We only need the box with height 10 for one tower and the box with height 9 for the other tower.
+
+Author:	3★shivam51
+Date Added:	12-12-2020
+Time Limit:	1 secs
+Source Limit:	50000 Bytes
+Languages:	CPP14, C, JAVA, PYTH 3.6, PYTH, CS2, ADA, PYPY, PYP3, TEXT, CPP17, PAS fpc, RUBY, PHP, NODEJS, GO, TCL, HASK, PERL, SCALA, kotlin, BASH, JS, PAS gpc, BF, LISP sbcl, CLOJ, LUA, D, R, CAML, rust, ASM, FORT, FS, LISP clisp, SQL, swift, SCM guile, PERL6, CLPS, WSPC, ERL, ICK, NICE, PRLG, ICON, PIKE, COB, SCM chicken, SCM qobi, ST, NEM, SQLQ
+
+
+
+
+
+
+
+............................................................................................................................................................
+
+
+
+
+
+
+
+
+
+
+CHEF AND ANTS
+
+
+
+
+
+
+
+
+Chef has been researching ant colonies for many years and finally discovered all their secrets.
+
+An ant colony consists of N distinct lines (numbered 1 through N) that pass through a point O, which is the queen's home. For each valid i, there are Mi ants on the i-th line.
+
+For each valid i and j, the j-th ant on the i-th line initially has a non-zero coordinate Xi,j with the following meaning:
+
+The distance of this ant from O is |Xi,j|.
+Let's choose a direction along the i-th line from O. The exact way in which this direction is chosen does not matter here, it only needs to be the same for all ants on the same line.
+If Xi,j is positive, this ant is at the distance |Xi,j| from O in the chosen direction. Otherwise, it is at this distance from O in the opposite direction.
+In other words, two ants j and k on a line i are at the same side of O if the signs of Xi,j and Xi,k are the same or on opposite sides if the signs are different.
+
+All ants move with the same constant speed. Initially, all of them are moving towards O. Whenever two or more ants meet (possibly at O), all of these ants turn around and start moving in the opposite directions with the same speed. We call this a collision. Even if an ant reaches O without meeting an ant there, it keeps moving in the same direction. An ant may change direction multiple times.
+
+Help Chef find the total number of collisions between ants. Note that even if more than two ants meet, it counts as only one collision.
+
+Input
+The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+The first line of each test case contains a single integer N.
+N lines follow. For each valid i, the i-th of these lines contains an integer Mi, followed by a space and Mi space-separated integers Xi,1,Xi,2,…,Xi,Mi.
+Output
+For each test case, print a single line containing one integer ― the number of collisions between ants.
+
+Constraints
+1≤T≤1,000
+1≤N≤2⋅105
+1≤Mi≤5⋅105 for each valid i
+1≤|Xi,j|≤109 for each valid i,j
+Xi,j<Xi,j+1 for each valid i,j
+the sum of N over all test cases does not exceed 2⋅105
+the sum of M1+M2+…+MN over all test cases does not exceed 106
+Subtasks
+Subtask #1 (30 points): N=1
+Subtask #2 (70 points): original constraints
+
+Example Input
+1
+2
+2 -2 1
+1 2
+Example Output
+2
+Explanation
+Example case 1: First, the ants on the first line collide at the coordinate −1/2 and change directions. Finally, ant 2 on the first line collides with the only ant on the second line; this happens at O. No collisions happen afterwards.
+
+Author:	4★arayi
+Date Added:	28-10-2020
+Time Limit:	2 secs
+Source Limit:	50000 Bytes
+Languages:	CPP14, C, JAVA, PYTH 3.6, PYTH, CS2, ADA, PYPY, PYP3, TEXT, CPP17, PAS fpc, RUBY, PHP, NODEJS, GO, TCL, HASK, PERL, SCALA, kotlin, BASH, JS, PAS gpc, BF, LISP sbcl, CLOJ, LUA, D, R, CAML, rust, ASM, FORT, FS, LISP clisp, SQL, swift, SCM guile, PERL6, CLPS, WSPC, ERL, ICK, NICE, PRLG, ICON, PIKE, COB, SCM chicken, SCM qobi, ST, NEM, SQLQ
+
+
+
+
+
+..............................................................................................................................................................
+
+
+
+
+
+
+
+
+BLACKJACK
+
+
+
+
+
+Chef is playing a card game called Blackjack. He starts with a deck of N cards (numbered 1 through N), where for each valid i, the i-th card has an integer Ai written on it. Then he starts dealing the cards one by one in the order from card 1 to card N. Chef wins if at some moment in time, the sum of all the cards dealt so far is between X and Y inclusive; if this never happens, Chef loses.
+
+We want Chef to win the game, so without him noticing, we will swap some pairs of cards (possibly none) before the game starts. Find the smallest number of swaps we need so that Chef would win the game, or determine that it is impossible to make Chef win.
+
+Input
+The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+The first line of each test case contains three space-separated integers N, X and Y.
+The second line contains N space-separated integers A1,A2,…,AN.
+Output
+For each test case, print a single line containing one integer ― the smallest required number of swaps or −1 if Chef cannot win.
+
+Constraints
+1≤T≤100
+1≤N,X,Y≤103
+X≤Y
+1≤Ai≤103 for each valid i
+the sum of N over all test cases does not exceed 104
+Subtasks
+Subtask #1 (22 points): Chef can win if we make up to 2 swaps
+
+Subtask #2 (34 points):
+
+1≤N,X,Y≤400
+1≤Ai≤400 for each valid i
+the sum of N over all test cases does not exceed 4,000
+Subtask #3 (44 points): original constraints
+
+Example Input
+3
+3 4 5
+1 2 3
+3 3 4
+1 2 3
+2 20 30
+40 10
+Example Output
+1
+0
+-1
+Explanation
+Example case 1: We can swap the last card with one of the first two cards.
+
+Example case 2: No swaps are necessary, Chef wins after dealing the first two cards.
+
+Example case 3: The order of the cards in the deck does not matter, Chef cannot win.
+
+Author:	6★triplem5ds
+Date Added:	7-12-2020
+Time Limit:	1 secs
+Source Limit:	50000 Bytes
+Languages:	CPP14, C, JAVA, PYTH 3.6, PYTH, CS2, ADA, PYPY, PYP3, TEXT, CPP17, PAS fpc, RUBY, PHP, NODEJS, GO, TCL, HASK, PERL, SCALA, kotlin, BASH, JS, PAS gpc, BF, LISP sbcl, CLOJ, LUA, D, R, CAML, rust, ASM, FORT, FS, LISP clisp, SQL, swift, SCM guile, PERL6, CLPS, WSPC, ERL, ICK, NICE, PRLG, ICON, PIKE, COB, SCM chicken, SCM qobi, ST, NEM, SQLQ
+
+
+
+
+
+..............................................................................................................................................................
+
+
+
+
+
+
+
+
+
+GUESS THE TILING
+
+
+
+
+
+This is an interactive problem.
+
+Chef wants to decorate his kitchen with tiles. However, he is running out of money and needs to get the work done at a discount. The Slash Decorators are very proud of their skills and give an offer to Chef.
+
+The kitchen is a square grid with length N units and width N units. It is divided into N rows and N columns. The rows are numbered 1 through N from top to bottom. Similarly, the columns are numbered 1 through N from left to right. Let's denote a cell in the i-th row and j-th column by (i,j). The Slash Decorators want to use N2 colourful tiles with dimensions 1×1 to cover the whole kitchen. The tiles can be placed in two orientations as shown in the figure below.
+
+
+
+Note that each of these two orientations can be converted to the other by rotating it 90∘ clockwise.
+
+The Slash Decorators initially filled all the cells of the kitchen with tiles, where each tile is placed in one of the two possible orientations. Chef does not know this initial configuration and his task is to find it by asking up to Q queries. In each query:
+
+Chef chooses a cell in the grid.
+The Slash Decorators rotate the tile in the cell 90∘ clockwise.
+Then, the Slash Decorators find all squares with area 2 formed by the blue diagonal lines (shown in the figure below) and tell Chef the number of these squares.
+
+
+In addition, the Slash Decorators initially tell Chef the number of squares with area 2 formed by the blue diagonal lines in the initial configuration. Let's denote this number by K.
+
+For example, in the configuration shown below, there are 3 squares with area 2.
+
+
+
+The queries are not independent, i.e. a tile rotated in a query stays rotated in subsequent queries. Chef may choose the same tile in multiple queries; in such a case, this tile is rotated multiple times.
+
+The offer is that if Chef guesses the initial configuration correctly, the work will be done for free. Please help him. You play as Chef and the grader plays as the Slash Decorators. You should find the configuration the kitchen is in (the orientations of all tiles) when you finish asking queries; note that this is equivalent to finding the initial configuration.
+
+Interaction
+First, you should read a line containing a single integer T ― the number of test cases. The description of interaction for T test cases follows.
+For each test case, you should start by reading a line containing three space-separated integers N, Q and K.
+Then, you may ask queries. For each query:
+Print a line containing three space-separated integers 1, X and Y.
+The grader rotates the tile in the cell (X,Y).
+Then, read a line containing a single integer Z. If you ask an invalid query or more than Q queries, Z=−1. Otherwise, Z denotes the number of squares with area 2 formed by the blue diagonal lines.
+Once you know the current configuration:
+Print a line containing a single integer 2.
+Then, for each i (1≤i≤N), print a line containing N space-separated integers; for each valid j, the j-th of these integers should be 0 or 1 if the cell (i,j) currently contains a tile in the first orientation or the second orientation, respectively, shown in the first figure.
+Finally, you should read a line containing a single integer. If your guess was incorrect, this integer is −1. Otherwise, this integer is 1 and you should continue solving the remaining test cases.
+If you receive −1, you should terminate your program immediately to receive the Wrong Answer verdict. Otherwise, you may receive any verdict. Don't forget to flush the output after printing each line!
+
+Constraints
+1≤T≤1,000
+2≤N≤200
+the sum of Q over all test cases does not exceed 3⋅105
+Subtasks
+Subtask #1 (1 point):
+
+N∈{2,4}
+Q=2N2
+Subtask #2 (11 points):
+
+N≤100
+Q=12⋅N2
+Subtask #3 (22 points): Q=5⋅N2
+Subtask #4 (66 points): Q=4⋅N2
+Example
+You     Grader
+        2
+        2 16 0
+1 2 2
+        0
+1 1 2
+        1
+1 1 1
+        0
+2
+1 1
+1 0
+        1
+        4 64 3
+1 2 2
+        1
+1 3 2
+        0
+1 2 1
+        0
+1 3 1
+        1
+1 1 3
+        1
+1 1 4
+        1
+1 2 4
+        2
+1 4 3
+        2
+1 3 4
+        2
+1 4 4
+        3
+2
+0 1 0 1
+0 1 1 0
+1 0 0 1
+1 0 1 0
+        1
+Explanation
+Example case 1:
+
+
+
+Example case 2: The initial configuration is depicted in the problem statement.
+
+Author:	5★jay_1048576
+Date Added:	2-12-2020
+Time Limit:	2 secs
+Source Limit:	50000 Bytes
+Languages:	CPP14, C, JAVA, PYTH 3.6, PYTH, CS2, ADA, PYPY, PYP3, TEXT, CPP17, PAS fpc, RUBY, PHP, NODEJS, GO, TCL, HASK, PERL, SCALA, kotlin, BASH, JS, PAS gpc, BF, LISP sbcl, CLOJ, LUA, D, R, CAML, rust, ASM, FORT, FS, LISP clisp, SQL, swift, SCM guile, PERL6, CLPS, WSPC, ERL, ICK, NICE, PRLG, ICON, PIKE, COB, SCM chicken, SCM qobi, ST, NEM, SQLQ
+
+
+
+
+
+...........................................................................................................................................................
+
+
+
+
+
+
+
+
+AND OR GAME
+
+
+
+
+
+Chef is playing a game with an integer V initially equal to 0 and two sets of numbers A and B of sizes N and M respectively. Chef will play for a number of turns (possibly zero). In each turn of the game Chef can perform one of the following operations:
+
+Pick an integer X from A and make V equal to V|X i.e the bitwise OR of the two numbers.
+Pick an integer X from B and make V equal to V&X i.e the bitwise AND of the two numbers.
+Chef stops playing when he gets bored i.e after an arbitrary number of turns. Find the number of possible distinct values of V after the game ends.
+
+Input:
+First line will contain T, number of testcases. Then the testcases follow.
+The first line of each test case contains two space-separated integers N and M.
+The second line contains N space-separated integers A1, A2, …, AN
+The third line contains M space-separated integers B1, B2, …, BM
+Output:
+For each test case, print the number of possible distinct values of V after the game ends.
+
+Constraints
+1≤N,M≤220
+0≤Ai,Bi<220
+The sum of N over all cases in a subtask doesn't exceed 220.
+The sum of M over all cases in a subtask doesn't exceed 220.
+The elements in A are pairwise distinct.
+The elements in B are pairwise distinct.
+Subtasks
+Subtask #1 (30 points, time limit 2s):
+
+1≤N,M≤210
+0≤Ai,Bi<210
+Subtask #2 (30 points, time limit 2s):
+
+1≤N,M≤215
+0≤Ai,Bi<215
+Subtask #3 (40 points, time limit 5s):
+
+1≤N,M≤220
+0≤Ai,Bi<220
+Sample Input:
+3
+3 1
+5 12 14
+15
+6 1
+0 1 3 6 12 14
+1
+4 3
+1 3 5 6
+3 6 10
+Sample Output:
+6
+9
+8
+EXPLANATION:
+Example case 1: V can reach the values {0,5,12,13,14,15}.
+
+Example case 2: V can reach the values {0,1,3,6,7,12,13,14,15}.
+
+Example case 3: V can reach the values {01,2,3,4,5,6,7}.
+
+Author:	6★triplem5ds
+Date Added:	25-12-2020
+Time Limit:	2 - 5 secs
+Source Limit:	50000 Bytes
+Languages:	CPP14, C, JAVA, PYTH 3.6, PYTH, CS2, ADA, PYPY, PYP3, TEXT, CPP17, PAS fpc, RUBY, PHP, NODEJS, GO, TCL, HASK, PERL, SCALA, kotlin, BASH, JS, PAS gpc, BF, LISP sbcl, CLOJ, LUA, D, R, CAML, rust, ASM, FORT, FS, LISP clisp, SQL, swift, SCM guile, PERL6, CLPS, WSPC, ERL, ICK, NICE, PRLG, ICON, PIKE, COB, SCM chicken, SCM qobi, ST, NEM, SQLQ
+
+
+
+
+..............................................................................................................................................................
+
+
+
+
+
+
+
+STACK QUEUE SORT (CHALLANGE)
+
+
+
+
+
+
+There are B blocks (numbered 1 through B) distributed in N containers (numbered 1 through N). For each valid i, the weight of the i-th block is Wi kilograms.
+
+For each container i, you should decide if it will be used like a stack or a queue. At any time, a container may contain any sequence of blocks (possibly the empty sequence); let's denote the number of the j-th block (indexed from 1) in the i-th container by Ai,j.
+
+A stack is a data structure that stores a sequence of integers (X1,X2,…,XM) and supports two types of instructions:
+
+pop: Remove the last element of the sequence. After this instruction, the sequence becomes (X1,…,XM−1); it must be non-empty before this instruction. The return value of this instruction is XM.
+push a: Add an element a at the end of the sequence. After this instruction, the sequence becomes (X1,…,XM,a).
+Similarly, a queue is a data structure that stores a sequence of integers (X1,X2,…,XM) and supports two types of instructions:
+
+pop: Remove the first element of the sequence. After this instruction, the sequence becomes (X2,…,XM); it must be non-empty before this instruction. The return value of this instruction is X1.
+push a: Add an element a at the end of the sequence. After this instruction, the sequence becomes (X1,…,XM,a).
+For each valid i, it takes Ci⋅w nanoseconds to pop a block with weight w from the container i and Di⋅w nanoseconds to push a block with weight w to the container i.
+
+Using the given data structures, you may perform the following operation at most B2/2 times: choose two containers c1 and c2 (c1≠c2), pop a block from the c1-th container and then push this block to the c2-th container.
+
+Your task is to sort all the blocks in a single container, i.e. after performing all operations, the sequence of blocks in some container must be (1,2,…,B). The time spent performing operations should be as small as possible.
+
+Input
+The first line of the input contains two space-separated integers N and B.
+The second line contains N space-separated integers C1,C2,…,CN.
+The third line contains N space-separated integers D1,D2,…,DN.
+The fourth line contains B space-separated integers W1,W2,…,WB.
+The next N lines describe the initial distribution of blocks in containers. For each valid i, the i-th of these lines contains an integer M denoting the number of blocks which are initially in the i-th container, followed by a space and M space-separated integers Ai,1,Ai,2,…,Ai,M denoting the sequence of blocks which are initially in this container.
+Output
+First, print a line containing a string with length N. For each valid i, the i-th character of this string should be either 'S' if the i-th sequence is used as a stack or 'Q' if it is used as a queue.
+Then, print a line containing a single integer Q ― the number of operations to perform.
+Finally, print Q lines. Each of these lines should contain two space-separated integers c1 and c2 describing an operation that pops an element from the c1-th container and pushes it into the c2-th container.
+Constraints
+2≤N≤128
+B=1,024
+1≤Ci,Di≤50 for each valid i
+1≤Wi≤50 for each valid i
+0≤M≤B
+1≤Ai,j≤B for each valid i,j
+Example Input
+3 4
+1 2 3
+1 2 3
+2 1 4 3
+2 3 2
+1 1
+1 4
+Example Output
+QQS
+4
+1 3
+1 2
+4 2
+4 2
+Explanation
+The first two containers are used as queues and the third container as a stack. The sequences change as follows:
+
+Initially: (3,2),(1),(4).
+After the first operation: (2),(1),(4,3).
+After the second operation: (),(1,2),(4,3).
+After the third operation: (),(1,2,3),(4).
+After the fourth operation: (),(1,2,3,4),().
+Test Generation
+The source code used to generate test data can be downloaded here.
+
+N can be 16, 32, 64 or 128.
+All values of Ci, Di and Wi are chosen uniformly randomly and independently between 1 and 50 inclusive.
+A permutation of the integers 1 through B is chosen uniformly randomly. The blocks are pushed to the containers one by one in this order.
+One of the following two initial distribution schemes is chosen:
+All B blocks are pushed into the 1-st container.
+For each block, a container into which it is pushed is chosen uniformly randomly and independently.
+There are eight test files ― one for each possible value of N and distribution scheme.
+Scoring
+If your output is invalid (in particular if you attempt to pop an empty container), you do not sort the blocks in a single container or you use more than B2/2 operations, you will receive the Wrong Answer verdict.
+
+Otherwise, the score of a test file is the number of nanoseconds spent performing your operations. The score of a submission is the sum of scores of all test files. Your goal is to minimise the score of your submission.
+
+There are eight test files. During the contest, the displayed score will account for exactly four test files, i.e. your score reflects your submission's performance on 50% (4/8) of the test files; However, if your program gets a non-AC verdict on any test file, your submission's verdict will be non-AC. In other words, an AC verdict denotes that your program runs successfully on all the test files. After the end of the contest, your score will be changed to include the sum of your program's scores over the other 4 test files.
+
+Author:	7★alei
+Date Added:	10-12-2020
+Time Limit:	5 secs
+Source Limit:	50000 Bytes
+Languages:	CPP14, C, JAVA, PYTH 3.6, PYTH, CS2, ADA, PYPY, PYP3, TEXT, CPP17, PAS fpc, RUBY, PHP, NODEJS, GO, TCL, HASK, PERL, SCALA, kotlin, BASH, JS, PAS gpc, BF, LISP sbcl, CLOJ, LUA, D, R, CAML, rust, ASM, FORT, FS, LISP clisp, SQL, swift, SCM guile, PERL6, CLPS, WSPC, ERL, ICK, NICE, PRLG, ICON, PIKE, COB, SCM chicken, SCM qobi, ST, NEM, SQLQ
+
+
+
+
+
+.......................................................................................................................................................
